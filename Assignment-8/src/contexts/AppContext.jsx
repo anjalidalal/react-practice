@@ -1,9 +1,17 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
-const AppContext = createContext();
+export const AppContext = createContext();
 
-export const AppContextProvider = ({children}) => {
-    return(
-       <AppContext.Provider value={"text"} >{children}</AppContext.Provider>
-    )
-}
+export const AppContextProvider = ({ children }) => {
+  const [state, setState] = useState("dummy");
+
+  const handleChange = (change) => {
+    setState(change);
+  };
+
+  return (
+    <AppContext.Provider value={{ state, handleChange }}>
+      {children}
+    </AppContext.Provider>
+  );
+};

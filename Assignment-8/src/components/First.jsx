@@ -1,14 +1,8 @@
 import React from "react";
 import Second from "./Second";
-import Third from "./Third";
 
 const First = () => {
-    return(
-        <>
-        <Second/>
-        <Third/>
-        </>
-    )
-}
+  return <Second />;
+};
 
 export default First;
