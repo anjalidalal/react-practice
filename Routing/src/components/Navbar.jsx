@@ -13,6 +13,10 @@ const links = [
     to: "/users",
     title: "Users",
   },
+  {
+    to: "/contact-us",
+    title: "Contact",
+  },
 ];
 
 export const Navbar = () => {

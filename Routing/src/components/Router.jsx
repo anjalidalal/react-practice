@@ -5,6 +5,7 @@ import { Home } from "./Home";
 import { About } from "./About";
 import { Users } from "./Users";
 import { UsersPage } from "./UsersPage";
+import { Contact } from "./Contact";
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/about" element={<About />} />
         <Route path="/users" exact element={<Users />} />
         <Route path="/users/:id" element={<UsersPage />} />
+        <Route path="/contact-us" exact element={<Contact />} />
       </Routes>
     </>
   );
