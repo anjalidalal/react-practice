@@ -29,11 +29,10 @@ const User = () => {
     <>
       <h3>Users</h3>
       {users.map((user) => (
-        <>
-          <Link
-            to={`/users/${user.id}`}
-          >{`${user.first_name} ${user.last_name}`}</Link>
-        </>
+        <Link
+          key={user.id}
+          to={`/users/${user.id}`}
+        >{`${user.first_name} ${user.last_name}`}</Link>
       ))}
     </>
   );

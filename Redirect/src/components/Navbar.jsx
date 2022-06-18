@@ -13,13 +13,19 @@ const links = [
     to: "/users",
     title: "Users",
   },
+  {
+    to: "/login",
+    title: "Login",
+  },
 ];
 
 export const Navbar = () => {
   return (
     <div className="link">
-      {links.map(({ to, title }) => (
-        <Link to={to}>{title}</Link>
+      {links.map(({ to, title }, index) => (
+        <Link to={to} key={index}>
+          {title}
+        </Link>
       ))}
     </div>
   );
