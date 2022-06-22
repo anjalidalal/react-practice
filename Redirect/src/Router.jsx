@@ -4,9 +4,10 @@ import { Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Home } from "./components/Home";
 import { About } from "./components/About";
-import { User } from "./components/User";
-import { UsersPage } from "./components/UsersPage";
+import { Users } from "./components/Users";
+import { UserPage } from "./components/UserPage";
 import { Login } from "./components/Login";
+import PrivateRoute from "../src/Private/PrivateRoute";
 
 const Router = () => {
   return (
@@ -15,8 +16,22 @@ const Router = () => {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/users" exact element={<User />} />
-        <Route path="/users/:id" element={<UsersPage />} />
+        <Route
+          path="/users"
+          element={
+            <PrivateRoute navigatePath={"/login"}>
+              <Users />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/users/:id"
+          element={
+            <PrivateRoute navigatePath={"/users/:id"}>
+              <UserPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="/login" element={<Login />} />
       </Routes>
     </>

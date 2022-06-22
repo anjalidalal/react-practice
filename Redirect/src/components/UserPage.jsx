@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
-const UsersPage = () => {
+const UserPage = () => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -26,6 +27,10 @@ const UsersPage = () => {
     getUsersDetails();
   }, []);
 
+  const handleGoBack = () => {
+    navigate("/users");
+  };
+
   return isLoading ? (
     <div>...Loading</div>
   ) : (
@@ -35,8 +40,9 @@ const UsersPage = () => {
         <h3>{`${user.first_name} ${user.last_name}`}</h3>
         <h5>{`Email : ${user.email}`}</h5>
       </div>
+      <button onClick={handleGoBack}>Go Back</button>
     </div>
   );
 };
 
-export { UsersPage };
+export { UserPage };

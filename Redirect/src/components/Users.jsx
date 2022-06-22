@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const User = () => {
+const Users = () => {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,4 +38,4 @@ const User = () => {
   );
 };
 
-export { User };
+export { Users };
