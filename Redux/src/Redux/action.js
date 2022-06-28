@@ -1,8 +1,16 @@
-import { ADD_TODO } from "./actionTypes";
+import { ADD_COUNT } from "./actionTypes";
+import { SUB_COUNT } from "./actionTypes";
 
-export const addTodo = (payload) => {
+export const addCount = (data) => {
   return {
-    type: ADD_TODO,
-    payload,
+    type: ADD_COUNT,
+    payload: data,
+  };
+};
+
+export const subCount = (data) => {
+  return {
+    type: SUB_COUNT,
+    payload: data,
   };
 };
