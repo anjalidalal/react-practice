@@ -1,4 +1,4 @@
-import { createStore } from "react-redux";
+import { createStoreHook } from "react-redux";
 import { reducer } from "./reducer";
 
-export const store = createStore(reducer);
+export const store = createStoreHook(reducer);

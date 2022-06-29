@@ -1,9 +1,11 @@
-import { ADD_COUNT } from "./actionTypes";
+import { ADD_COUNT, SUB_COUNT } from "./actionTypes";
 
 const initState = {
-  count: 0,
+  count: 1,
 };
-const reducer = (state = initState, { type, payload }) => {
+
+export const reducer = (state = initState, { type, payload }) => {
+  console.log(state);
   switch (type) {
     case ADD_COUNT:
       return {
@@ -19,5 +21,3 @@ const reducer = (state = initState, { type, payload }) => {
       return { ...state };
   }
 };
-
-export { reducer };
