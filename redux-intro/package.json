@@ -1,5 +1,5 @@
 {
-  "name": "redux",
+  "name": "redux-intro",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,10 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "nanoid": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.0"
   },
   "browserslist": {
     "production": [
