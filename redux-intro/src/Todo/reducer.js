@@ -1,15 +1,18 @@
+import { loadData, saveData } from "../localstorege";
 import { ADD_TODO } from "./actionTypes";
 
 const initState = {
-  todos: [],
+  todos: loadData("todos") || [],
 };
 
 export const reducer = (state = initState, { type, payload }) => {
   switch (type) {
     case ADD_TODO:
+      const updatedTodo = [...state.todos, payload];
+      saveData("todos", updatedTodo);
       return {
         ...state,
-        todos: [...state.todos, payload],
+        todos: updatedTodo,
       };
     default:
       return { ...state };

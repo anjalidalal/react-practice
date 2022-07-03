@@ -3,11 +3,11 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
-import { addTodo } from "../Redux/Action";
+import { addTodo } from "../Todo/Action";
 
-export const TodoInput = () => {
+export const Todo = () => {
   const [text, setText] = useState();
-  const state = useSelector((state) => state.todos);
+  const state = useSelector((state) => state.app.todos);
   const dispatch = useDispatch();
 
   const handleAddTodo = () => {
