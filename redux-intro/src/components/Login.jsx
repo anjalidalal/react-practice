@@ -1,13 +1,27 @@
 import React from "react";
+import { useState } from "react";
 
-export const Login = () => {
+export const Login = ({ handleLogin }) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let payload = { email, password };
+    handleLogin(payload);
+  };
+
   return (
     <div>
       <h3>Login Form</h3>
-      <form>
-        <input type="email" placeholder="Email" />
+      <form onSubmit={handleSubmit}>
+        <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
         <br />
-        <input type="password" placeholder="Password" />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <br />
         <input type="submit" value="Submit" />
       </form>

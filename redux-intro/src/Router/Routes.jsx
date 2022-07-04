@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { Home } from "../components/Home";
-import { Login } from "../components/Login";
+import { LoginPage } from "../components/LoginPage";
 
 export const ComponentsRoutes = () => {
   return (
@@ -14,7 +14,7 @@ export const ComponentsRoutes = () => {
       </div>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </>
   );

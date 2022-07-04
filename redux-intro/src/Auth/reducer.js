@@ -1,13 +1,17 @@
 import { LOGIN_SUCCESS, LOGIN_FAILED } from "./actionTypes";
+import { loadData, saveData } from "../localstorege";
+
+const token = loadData("token");
 
 const initState = {
-  isAuth: false,
-  token: "",
+  isAuth: token ? true : false,
+  token: token || "",
 };
 
 export const authReducer = (state = initState, { type, payload }) => {
   switch (type) {
     case LOGIN_SUCCESS:
+      saveData("token", payload);
       return {
         ...state,
         isAuth: true,
