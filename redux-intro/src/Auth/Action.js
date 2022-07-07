@@ -13,3 +13,6 @@ export const loginFailed = (token) => {
     payload: token,
   };
 };
+export const loginUser = () => {
+  return {};
+};
